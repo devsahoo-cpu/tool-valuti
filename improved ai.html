@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ForgetfulTasks Pro - Advanced no-login task manager with productivity analytics, AI suggestions, and cross-device sync. Your data stays private with client-side encryption." />
+  
+  <!-- Optimized Keywords -->
+  <meta name="keywords" content="premium task manager, productivity analytics, AI task suggestions, encrypted task sync, priority matrix, time tracking, habit formation, goal tracking, executive function support">
+  
+  <meta name="author" content="Devansh Sahoo">
+  
+  <!-- Optimized Title -->
+  <title>ForgetfulTasks Pro: Advanced Private Task Manager | AI-Powered Productivity</title>
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="ForgetfulTasks Pro - AI-Powered Task Manager">
+  <meta property="og:description" content="Premium no-login task tracker with productivity analytics, AI suggestions, and encrypted sync. Your data stays private.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/forgetfultasks-pro">
+  <meta property="og:image" content="https://yourdomain.com/images/task-tracker-pro-preview.jpg">
+  <meta property="og:site_name" content="ForgetfulTasks Pro">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ForgetfulTasks Pro: AI-Powered Task Manager">
+  <meta name="twitter:description" content="Advanced private task tracking with productivity insights and AI suggestions.">
+  <meta name="twitter:image" content="https://yourdomain.com/images/task-tracker-pro-twitter.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourdomain.com/forgetfultasks-pro" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  <!-- Google Fonts with preload -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
+  
+  <!-- Font Awesome with preload -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </noscript>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ForgetfulTasks Pro",
+    "description": "Advanced no-login task manager with productivity analytics and AI suggestions",
+    "url": "https://yourdomain.com/forgetfultasks-pro",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Devansh Sahoo"
+    }
+  }
+  </script>
+  
+  <style>
+    :root {
+      --primary: #4361ee;
+      --primary-light: #4895ef;
+      --secondary: #3f37c9;
+      --dark: #212529;
+      --light: #f8f9fa;
+      --success: #4cc9f0;
+      --danger: #f72585;
+      --warning: #f8961e;
+      --info: #7209b7;
+      --low-priority: #4cc9f0;
+      --medium-priority: #f8961e;
+      --high-priority: #f72585;
+      --border-radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+      --glass: rgba(255, 255, 255, 0.15);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      background-image: radial-gradient(circle at 10% 20%, rgba(67, 97, 238, 0.05) 0%, rgba(67, 97, 238, 0.05) 90%);
+    }
+    
+    /* Navigation Styles - Consistent with other pages */
+    .main-nav {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section - Like AI Detector */
+    header {
+      background: var(--gradient);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .highlight {
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      margin: 1rem auto 2rem;
+      max-width: 600px;
+      opacity: 0.9;
+    }
+    
+    .feature-list {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      padding: 0.8rem 1.2rem;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+      background-size: cover;
+      opacity: 0.3;
+    }
+    
+    /* Main Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    /* Task Manager Styles - Enhanced */
+    .dashboard {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .sidebar {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      height: fit-content;
+    }
+    
+    .main-content {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .date-display {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+    
+    .date-nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .date-nav button {
+      background: var(--light);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: var(--dark);
+    }
+    
+    .date-nav button:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .task-input-container {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .task-input-container input {
+      flex-grow: 1;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid #e0e0e0;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .task-input-container input:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    }
+    
+    .task-options {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .select-wrapper {
+      position: relative;
+      min-width: 150px;
+    }
+    
+    .select-wrapper select {
+      width: 100%;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid #e0e0e0;
+      border-radius: var(--border-radius);
+      font-size: 0.9rem;
+      font-family: 'Poppins', sans-serif;
+      appearance: none;
+      background-color: white;
+      cursor: pointer;
+    }
+    
+    .select-wrapper::after {
+      content: "?";
+      font-size: 0.7rem;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: var(--dark);
+    }
+    
+    button {
+      background: var(--gradient);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    button.secondary {
+      background: var(--light);
+      color: var(--dark);
+      box-shadow: none;
+    }
+    
+    button.secondary:hover {
+      background: #e9ecef;
+    }
+    
+    button.danger {
+      background: var(--danger);
+    }
+    
+    button.danger:hover {
+      background: #d11464;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+    
+    li.task-item {
+      display: flex;
+      align-items: center;
+      padding: 1.2rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 0.8rem;
+      background: white;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+    
+    li.task-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    li.task-item.priority-high {
+      border-left-color: var(--high-priority);
+    }
+    
+    li.task-item.priority-medium {
+      border-left-color: var(--medium-priority);
+    }
+    
+    li.task-item.priority-low {
+      border-left-color: var(--low-priority);
+    }
+    
+    .task-checkbox {
+      margin-right: 1rem;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      accent-color: var(--primary);
+    }
+    
+    .task-content {
+      flex-grow: 1;
+      margin: 0 1rem;
+    }
+    
+    .task-text {
+      font-weight: 500;
+    }
+    
+    .task-meta {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .completed .task-text {
+      text-decoration: line-through;
+      color: #aaa;
+    }
+    
+    .task-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .task-actions button {
+      padding: 0.5rem;
+      background: none;
+      color: #6c757d;
+      font-size: 1rem;
+      box-shadow: none;
+    }
+    
+    .task-actions button:hover {
+      background: #f8f9fa;
+      transform: none;
+      box-shadow: none;
+      color: var(--primary);
+    }
+    
+    /* Priority Tags - Enhanced */
+    .priority-tag {
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .priority-low {
+      background-color: rgba(76, 201, 240, 0.1);
+      color: var(--low-priority);
+      border: 1px solid rgba(76, 201, 240, 0.3);
+    }
+    
+    .priority-medium {
+      background-color: rgba(248, 150, 30, 0.1);
+      color: var(--medium-priority);
+      border: 1px solid rgba(248, 150, 30, 0.3);
+    }
+    
+    .priority-high {
+      background-color: rgba(247, 37, 133, 0.1);
+      color: var(--high-priority);
+      border: 1px solid rgba(247, 37, 133, 0.3);
+    }
+    
+    /* Category Tags - Enhanced */
+    .category-tag {
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background-color: rgba(67, 97, 238, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(67, 97, 238, 0.3);
+    }
+    
+    /* Reminder Tags - Enhanced */
+    .reminder-tag {
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background-color: rgba(114, 9, 183, 0.1);
+      color: var(--info);
+      border: 1px solid rgba(114, 9, 183, 0.3);
+    }
+    
+    /* Stats Cards - Like AI Detector */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin-top: 0.5rem;
+    }
+    
+    /* Filter Buttons - Enhanced */
+    .filter-container {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      background: var(--light);
+      color: var(--dark);
+      border-radius: 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    /* Sidebar Widgets */
+    .widget {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .widget-title {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    /* Productivity Chart */
+    .productivity-chart {
+      height: 200px;
+      margin-top: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-end;
+      padding: 0.5rem;
+      gap: 0.5rem;
+    }
+    
+    .chart-bar {
+      flex: 1;
+      background: var(--gradient);
+      border-radius: 4px 4px 0 0;
+      transition: height 0.5s ease;
+      position: relative;
+    }
+    
+    .chart-bar::after {
+      content: attr(data-day);
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      color: #6c757d;
+    }
+    
+    /* AI Suggestions */
+    .ai-suggestion {
+      background: rgba(67, 97, 238, 0.05);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      border-left: 3px solid var(--primary);
+    }
+    
+    .ai-suggestion p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .ai-suggestion .suggestion-action {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--primary);
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    
+    /* Time Input */
+    .time-input-wrapper {
+      position: relative;
+      min-width: 120px;
+    }
+    
+    .time-input-wrapper input[type="time"] {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #e0e0e0;
+      border-radius: var(--border-radius);
+      font-size: 0.9rem;
+      font-family: 'Poppins', sans-serif;
+      background-color: white;
+      cursor: pointer;
+    }
+    
+    /* Empty State */
+    .no-tasks {
+      text-align: center;
+      padding: 3rem;
+      color: #6c757d;
+    }
+    
+    .no-tasks i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #dee2e6;
+    }
+    
+    /* FAQ Section - Like AI Detector */
+    .faq-section {
+      margin-top: 3rem;
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .faq-section h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+    }
+    
+    .faq-answer {
+      color: var(--dark);
+      line-height: 1.7;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .task-input-container {
+        flex-direction: column;
+      }
+      
+      .task-options {
+        flex-direction: column;
+      }
+      
+      .select-wrapper, .time-input-wrapper {
+        width: 100%;
+      }
+      
+      .nav-container {
+        padding: 1rem;
+        flex-direction: column;
+      }
+      
+      .nav-links {
+        margin-top: 1rem;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="inde.html" class="logo">ToolVault</a>
+      <div class="nav-links">
+        <a href="inde.html">Home</a>
+        <a href="ai.html">AI Detector</a>
+        <a href="my secrets.html">Encryption</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="improved ai.html">Task Manager</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero-content">
+      <h1>ForgetfulTasks <span class="highlight">Pro</span></h1>
+      <p class="subtitle">Your advanced private task manager with productivity analytics and AI suggestions</p>
+      
+      <div class="feature-list">
+        <div class="feature-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>End-to-end encrypted sync</span>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-robot"></i>
+          <span>AI-powered suggestions</span>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-chart-pie"></i>
+          <span>Productivity analytics</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="monetag-section">
+    <!-- Ezoic Boost -->
+    <script src="https://www.ezojs.com/ezoic/sa.min.js" data-cfasync="false" async></script>
+    <script>
+      var ezoicBoostKey = 'YOUR_EZOIC_BOOST_KEY_TOP';
+      (function(e,z,o,i,c){if(!e.fbq){var n=e.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!e._fbq)e._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];var t=z.createElement(o);t.async=!0;t.src=i;var s=z.getElementsByTagName(o)[0];s.parentNode.insertBefore(t,s)}})(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', ezoicBoostKey);
+      fbq('track', 'PageView');
+    </script>
+  </div>
+
+  <div class="container">
+    <div class="dashboard">
+      <div class="sidebar">
+        <div class="widget">
+          <h3 class="widget-title"><i class="fas fa-chart-line"></i> Productivity</h3>
+          <div class="stats-container">
+            <div class="stat-card">
+              <div class="stat-value" id="completionRate">0%</div>
+              <div class="stat-label">Completion Rate</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="streakDays">0</div>
+              <div class="stat-label">Day Streak</div>
+            </div>
+          </div>
+          
+          <div class="productivity-chart" id="productivityChart">
+            <div class="chart-bar" style="height: 30%;" data-day="Mon"></div>
+            <div class="chart-bar" style="height: 45%;" data-day="Tue"></div>
+            <div class="chart-bar" style="height: 60%;" data-day="Wed"></div>
+            <div class="chart-bar" style="height: 75%;" data-day="Thu"></div>
+            <div class="chart-bar" style="height: 90%;" data-day="Fri"></div>
+            <div class="chart-bar" style="height: 65%;" data-day="Sat"></div>
+            <div class="chart-bar" style="height: 40%;" data-day="Sun"></div>
+          </div>
+        </div>
+        
+        <div class="widget">
+          <h3 class="widget-title"><i class="fas fa-robot"></i> AI Suggestions</h3>
+          <div class="ai-suggestion">
+            <p>Based on your patterns, try batching similar tasks together on Tuesday afternoons when you're most productive.</p>
+            <span class="suggestion-action">Apply suggestion</span>
+          </div>
+          <div class="ai-suggestion">
+            <p>You have 3 high-priority tasks overdue. Consider rescheduling or breaking them into smaller steps.</p>
+            <span class="suggestion-action">Show me</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="main-content">
+        <div class="date-display">
+          <span id="dateDisplay"></span>
+          <div class="date-nav">
+            <button id="prevDayBtn" title="Previous day"><i class="fas fa-chevron-left"></i></button>
+            <button id="todayBtn" title="Today">Today</button>
+            <button id="nextDayBtn" title="Next day"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+
+        <div class="filter-container" id="filterContainer">
+          <div class="filter-btn active" data-filter="all">All Tasks</div>
+          <div class="filter-btn" data-filter="active">Active</div>
+          <div class="filter-btn" data-filter="completed">Completed</div>
+          <div class="filter-btn" data-filter="high">High Priority</div>
+          <div class="filter-btn" data-filter="overdue">Overdue</div>
+        </div>
+
+        <div class="task-input-container">
+          <input type="text" id="newTaskInput" placeholder="Add a new task..." aria-label="New task input" />
+          <button id="addTaskBtn"><i class="fas fa-plus"></i> Add Task</button>
+        </div>
+
+        <div class="task-options">
+          <div class="select-wrapper">
+            <select id="prioritySelect" aria-label="Task priority">
+              <option value="low">Low Priority</option>
+              <option value="medium" selected>Medium Priority</option>
+              <option value="high">High Priority</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <select id="categorySelect" aria-label="Task category">
+              <option value="">No Category</option>
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="shopping">Shopping</option>
+              <option value="health">Health</option>
+            </select>
+          </div>
+          <div class="time-input-wrapper">
+            <input type="time" id="reminderTime" aria-label="Reminder time">
+          </div>
+          <div class="select-wrapper">
+            <select id="dueDateSelect" aria-label="Due date">
+              <option value="today">Today</option>
+              <option value="tomorrow">Tomorrow</option>
+              <option value="week">This Week</option>
+              <option value="custom">Custom...</option>
+            </select>
+          </div>
+        </div>
+
+        <ul id="taskList">
+          <li class="no-tasks" id="noTasksMessage">
+            <i class="far fa-smile"></i>
+            <p>No tasks yet. Start by adding one above!</p>
+          </li>
+        </ul>
+
+        <div class="task-actions">
+          <button class="secondary" id="clearCompletedBtn"><i class="fas fa-check-circle"></i> Clear Completed</button>
+          <button class="secondary" id="exportBtn"><i class="fas fa-file-export"></i> Export</button>
+          <button class="danger" id="resetBtn"><i class="fas fa-trash-alt"></i> Reset All</button>
+        </div>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+          
+          <div class="faq-item">
+            <div class="faq-question">Is my task data really private?</div>
+            <div class="faq-answer">Yes, ForgetfulTasks Pro stores all your data locally in your browser with optional end-to-end encrypted sync. Nothing is stored on our servers in readable form.</div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">How does the AI suggestion feature work?</div>
+            <div class="faq-answer">Our AI analyzes your task completion patterns, time of day productivity, and task types to offer personalized suggestions for improving your workflow.</div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">Can I access my tasks from multiple devices?</div>
+            <div class="faq-answer">Yes, with our optional encrypted sync feature (requires account), your tasks are securely available across all your devices while maintaining privacy.</div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="monetag-section">
+    <!-- Ezoic Boost -->
+    <script src="https://www.ezojs.com/ezoic/sa.min.js" data-cfasync="false" async></script>
+    <script>
+      var ezoicBoostKey = 'YOUR_EZOIC_BOOST_KEY_BOTTOM';
+      (function(e,z,o,i,c){if(!e.fbq){var n=e.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!e._fbq)e._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];var t=z.createElement(o);t.async=!0;t.src=i;var s=z.getElementsByTagName(o)[0];s.parentNode.insertBefore(t,s)}})(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', ezoicBoostKey);
+      fbq('track', 'PageView');
+    </script>
+  </div>
+
+  <footer>
+    <p>&copy; <span id="currentYear"></span> ToolVault. Your data stays private on your device.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/privacy" aria-label="Privacy Policy">Privacy</a> | 
+      <a href="/terms" aria-label="Terms of Service">Terms</a> | 
+      <a href="/contact" aria-label="Contact Us">Contact</a>
+    </nav>
+  </footer>
+
+  <!-- Deferred JavaScript -->
+  <script defer>
+    // DOM Elements
+    const taskList = document.getElementById('taskList');
+    const newTaskInput = document.getElementById('newTaskInput');
+    const addTaskBtn = document.getElementById('addTaskBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const clearCompletedBtn = document.getElementById('clearCompletedBtn');
+    const exportBtn = document.getElementById('exportBtn');
+    const noTasksMessage = document.getElementById('noTasksMessage');
+    const dateDisplay = document.getElementById('dateDisplay');
+    const prioritySelect = document.getElementById('prioritySelect');
+    const categorySelect = document.getElementById('categorySelect');
+    const reminderTime = document.getElementById('reminderTime');
+    const dueDateSelect = document.getElementById('dueDateSelect');
+    const prevDayBtn = document.getElementById('prevDayBtn');
+    const todayBtn = document.getElementById('todayBtn');
+    const nextDayBtn = document.getElementById('nextDayBtn');
+    const filterContainer = document.getElementById('filterContainer');
+    const completionRateEl = document.getElementById('completionRate');
+    const streakDaysEl = document.getElementById('streakDays');
+    
+    // Current date management
+    let currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Initialize the app
+    function init() {
+      updateDateDisplay();
+      renderTasks();
+      updateStats();
+      setupEventListeners();
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      // Request notification permission
+      if ('Notification' in window) {
+        Notification.requestPermission();
+      }
+      
+      // Simulate loading productivity chart
+      setTimeout(() => {
+        animateChart();
+      }, 500);
+    }
+
+    // Animate productivity chart
+    function animateChart() {
+      const bars = document.querySelectorAll('.chart-bar');
+      bars.forEach(bar => {
+        const targetHeight = bar.style.height;
+        bar.style.height = '0%';
+        setTimeout(() => {
+          bar.style.height = targetHeight;
+        }, 100);
+      });
+    }
+
+    // Set up event listeners
+    function setupEventListeners() {
+      addTaskBtn.addEventListener('click', addTask);
+      newTaskInput.addEventListener('keypress', e => e.key === 'Enter' && addTask());
+      resetBtn.addEventListener('click', resetAllTasks);
+      clearCompletedBtn.addEventListener('click', clearCompletedTasks);
+      exportBtn.addEventListener('click', exportTasks);
+      prevDayBtn.addEventListener('click', navigateToPreviousDay);
+      todayBtn.addEventListener('click', navigateToToday);
+      nextDayBtn.addEventListener('click', navigateToNextDay);
+      
+      // Filter buttons
+      filterContainer.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderTasks();
+        });
+      });
+    }
+
+    // Task functions
+    function addTask() {
+      const text = newTaskInput.value.trim();
+      if (!text) return;
+      
+      const tasks = getTasks();
+      const newTask = {
+        id: Date.now(),
+        text,
+        completed: false,
+        priority: prioritySelect.value,
+        category: categorySelect.value,
+        reminder: reminderTime.value,
+        dueDate: calculateDueDate(),
+        createdAt: new Date().toISOString()
+      };
+      
+      tasks.push(newTask);
+      saveTasks(tasks);
+      renderTasks();
+      newTaskInput.value = '';
+      newTaskInput.focus();
+      updateStats();
+      
+      // Set reminder if time was specified
+      if (reminderTime.value) {
+        setReminder(newTask);
+      }
+    }
+    
+    function calculateDueDate() {
+      const option = dueDateSelect.value;
+      const dueDate = new Date();
+      
+      switch(option) {
+        case 'tomorrow':
+          dueDate.setDate(dueDate.getDate() + 1);
+          break;
+        case 'week':
+          dueDate.setDate(dueDate.getDate() + 7);
+          break;
+        case 'custom':
+          // In a real app, this would open a date picker
+          return null;
+      }
+      
+      return option === 'today' ? null : dueDate.toISOString().split('T')[0];
+    }
+
+    function getTasks() {
+      const dateKey = formatDateKey(currentDate);
+      const tasks = localStorage.getItem(`tasks_${dateKey}`);
+      return tasks ? JSON.parse(tasks) : [];
+    }
+
+    function saveTasks(tasks) {
+      const dateKey = formatDateKey(currentDate);
+      localStorage.setItem(`tasks_${dateKey}`, JSON.stringify(tasks));
+    }
+
+    function renderTasks() {
+      const tasks = getTasks();
+      const activeFilter = filterContainer.querySelector('.filter-btn.active').dataset.filter;
+      
+      let filteredTasks = tasks;
+      if (activeFilter === 'active') {
+        filteredTasks = tasks.filter(task => !task.completed);
+      } else if (activeFilter === 'completed') {
+        filteredTasks = tasks.filter(task => task.completed);
+      } else if (activeFilter === 'high') {
+        filteredTasks = tasks.filter(task => task.priority === 'high');
+      } else if (activeFilter === 'overdue') {
+        filteredTasks = tasks.filter(task => isTaskOverdue(task));
+      }
+      
+      taskList.innerHTML = '';
+      
+      if (filteredTasks.length === 0) {
+        noTasksMessage.style.display = 'block';
+        taskList.appendChild(noTasksMessage);
+        return;
+      }
+      
+      noTasksMessage.style.display = 'none';
+      
+      filteredTasks.forEach(task => {
+        const li = document.createElement('li');
+        li.className = `task-item priority-${task.priority} ${task.completed ? 'completed' : ''} ${isTaskOverdue(task) ? 'overdue' : ''}`;
+        li.dataset.taskId = task.id;
+        
+        li.innerHTML = `
+          <input type="checkbox" class="task-checkbox" ${task.completed ? 'checked' : ''}
+                 aria-label="${task.completed ? 'Mark as incomplete' : 'Mark as complete'}">
+          <div class="task-content">
+            <div class="task-text">${task.text}</div>
+            <div class="task-meta">
+              ${task.priority !== 'low' ? `<span class="priority-tag priority-${task.priority}">
+                <i class="fas fa-${task.priority === 'high' ? 'exclamation-circle' : 'info-circle'}"></i> ${task.priority}
+              </span>` : ''}
+              ${task.category ? `<span class="category-tag">
+                <i class="fas fa-${getCategoryIcon(task.category)}"></i> ${task.category}
+              </span>` : ''}
+              ${task.reminder ? `<span class="reminder-tag">
+                <i class="far fa-clock"></i> ${task.reminder}
+              </span>` : ''}
+              ${task.dueDate && !task.completed && isTaskOverdue(task) ? `<span class="priority-tag priority-high">
+                <i class="fas fa-exclamation-triangle"></i> Overdue
+              </span>` : ''}
+            </div>
+          </div>
+          <div class="task-actions">
+            <button title="Edit task"><i class="far fa-edit"></i></button>
+            <button title="Delete task"><i class="far fa-trash-alt"></i></button>
+          </div>
+        `;
+        
+        li.querySelector('.task-checkbox').addEventListener('change', (e) => {
+          toggleComplete(task.id, e.target.checked);
+        });
+        
+        // Edit button
+        li.querySelector('.task-actions button:first-child').addEventListener('click', () => editTask(task.id));
+        
+        // Delete button
+        li.querySelector('.task-actions button:last-child').addEventListener('click', () => deleteTask(task.id));
+        
+        // Double-click to edit
+        li.addEventListener('dblclick', () => editTask(task.id));
+        
+        taskList.appendChild(li);
+      });
+    }
+    
+    function isTaskOverdue(task) {
+      if (task.completed || !task.dueDate) return false;
+      const dueDate = new Date(task.dueDate);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      return dueDate < today;
+    }
+
+    function toggleComplete(id, completed) {
+      const tasks = getTasks();
+      const index = tasks.findIndex(t => t.id === id);
+      if (index !== -1) {
+        tasks[index].completed = completed;
+        tasks[index].completedAt = completed ? new Date().toISOString() : null;
+        saveTasks(tasks);
+        renderTasks();
+        updateStats();
+      }
+    }
+
+    function deleteTask(id) {
+      if (confirm('Are you sure you want to delete this task?')) {
+        const tasks = getTasks().filter(t => t.id !== id);
+        saveTasks(tasks);
+        renderTasks();
+        updateStats();
+      }
+    }
+
+    function editTask(id) {
+      const tasks = getTasks();
+      const task = tasks.find(t => t.id === id);
+      if (!task) return;
+      
+      const newText = prompt("Edit your task:", task.text);
+      if (newText !== null && newText.trim() !== '') {
+        task.text = newText.trim();
+        saveTasks(tasks);
+        renderTasks();
+      }
+    }
+
+     function clearCompletedTasks() {
+      if (confirm('Are you sure you want to clear all completed tasks?')) {
+        const tasks = getTasks().filter(task => !task.completed);
+        saveTasks(tasks);
+        renderTasks();
+        updateStats();
+      }
+    }
+function updateStats() {
+  // Make sure formatDateKey is available to calculateStreak
+  if (typeof formatDateKey !== 'function') {
+    window.formatDateKey = formatDateKey;
+  }
+  // ... rest of existing code ...
+}
+    function resetAllTasks() {
+      if (confirm('Are you sure you want to clear ALL tasks for this day?')) {
+        const dateKey = formatDateKey(currentDate);
+        localStorage.removeItem(`tasks_${dateKey}`);
+        renderTasks();
+        updateStats();
+      }
+    }
+    
+    function exportTasks() {
+      const tasks = getTasks();
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(tasks, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `tasks-${formatDateKey(currentDate)}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+
+    // Date navigation
+    function navigateToPreviousDay() {
+      currentDate.setDate(currentDate.getDate() - 1);
+      updateDateDisplay();
+      renderTasks();
+      updateStats();
+    }
+
+    function navigateToToday() {
+      currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0);
+      updateDateDisplay();
+      renderTasks();
+      updateStats();
+    }
+
+    function navigateToNextDay() {
+      currentDate.setDate(currentDate.getDate() + 1);
+      updateDateDisplay();
+      renderTasks();
+      updateStats();
+    }
+
+    function updateDateDisplay() {
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      };
+      dateDisplay.textContent = currentDate.toLocaleDateString(undefined, options);
+      
+      // Highlight today button if viewing today
+      todayBtn.style.fontWeight = currentDate.getTime() === today.getTime() ? 'bold' : 'normal';
+    }
+
+    function formatDateKey(date) {
+      return date.toISOString().split('T')[0];
+    }
+
+    // Stats functions
+    function updateStats() {
+      const tasks = getTasks();
+      const totalTasks = tasks.length;
+      const completedTasks = tasks.filter(task => task.completed).length;
+      const highPriorityTasks = tasks.filter(task => task.priority === 'high').length;
+      const overdueTasks = tasks.filter(task => isTaskOverdue(task)).length;
+      
+      // Calculate completion rate
+      const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+      completionRateEl.textContent = `${completionRate}%`;
+      
+      // Calculate actual streak days
+const streakDays = calculateStreak();
+streakDaysEl.textContent = streakDays > 0 ? streakDays : '0';
+
+function calculateStreak() {
+  const tasksByDate = {};
+  const now = new Date();
+  
+  // Collect completed tasks from past 30 days
+  for (let i = 0; i < 30; i++) {
+    const date = new Date();
+    date.setDate(now.getDate() - i);
+    date.setHours(0, 0, 0, 0);
+    
+    const dateKey = formatDateKey(date);
+    const tasks = JSON.parse(localStorage.getItem(`tasks_${dateKey}`) || '[]');
+    const completedTasks = tasks.filter(task => task.completed);
+    
+    tasksByDate[dateKey] = completedTasks.length > 0;
+  }
+
+  // Calculate current streak
+  let streak = 0;
+  let currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+  
+  while (true) {
+    const dateKey = formatDateKey(currentDate);
+    if (tasksByDate[dateKey]) {
+      streak++;
+      currentDate.setDate(currentDate.getDate() - 1);
+    } else {
+      break;
+    }
+  }
+  
+  return streak;
+}
+    }
+
+    // Helper functions
+    function getCategoryIcon(category) {
+      const icons = {
+        work: 'briefcase',
+        personal: 'user',
+        shopping: 'shopping-cart',
+        health: 'heartbeat'
+      };
+      return icons[category] || 'tag';
+    }
+
+    function setReminder(task) {
+      const [hours, minutes] = task.reminder.split(':').map(Number);
+      const reminderTime = new Date(currentDate);
+      reminderTime.setHours(hours, minutes, 0, 0);
+      
+      const now = new Date();
+      if (reminderTime > now) {
+        const timeout = reminderTime - now;
+        setTimeout(() => {
+          if ('Notification' in window && Notification.permission === 'granted') {
+            new Notification(`Reminder: ${task.text}`, {
+              body: `Time to complete your ${task.priority} priority task!`,
+              icon: '/icon.png'
+            });
+          } else {
+            alert(`Reminder: ${task.text}\nTime to complete your ${task.priority} priority task!`);
+          }
+        }, timeout);
+      }
+    }
+
+    // Initialize the app
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

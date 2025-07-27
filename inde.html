@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="description" content="Use ToolVault's 100% free, no-login tools: AI art detector (92% accuracy), encrypted messaging, wishlist tracker & offline task manager. , no tracking, works instantly." />
+  <meta name="keywords" content="free online tools, AI art detector, no-login task manager, private encryption, wishlist tracker, offline tools" />
+  <meta name="author" content="Devansh Sahoo, ToolVault" />
+  
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:title" content="ToolVault: Free Online Tools (No Login) – AI Detector, Encryption & More" />
+  <meta property="og:description" content="Instantly detect AI art, encrypt messages, track tasks & wishlists – 100% free with no signup." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:image" content="https://yourdomain.com/assets/preview.jpg" />
+  
+  <!-- Canonical & Favicon -->
+  <link rel="canonical" href="https://yourdomain.com" />
+  <link rel="icon" href="/favicon.ico" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ToolVault",
+    "description": "Free, no-login online tools for productivity and privacy.",
+    "url": "https://yourdomain.com",
+    "applicationCategory": "Productivity",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  
+  <title>ToolVault: Free Online Tools (No Login) – AI Detector, Encryption & Task Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #4361ee;
+      --primary-light: #4895ef;
+      --secondary: #3f37c9;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --accent: #f72585;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+    
+    /* Navigation Styles */
+    .main-nav {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section Styles */
+    header {
+      background: var(--gradient);
+      color: white;
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+      min-height: 80vh;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      max-width: 600px;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .hero-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 50%;
+      overflow: hidden;
+    }
+    
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+    }
+    
+    h1 {
+      font-size: 3.2rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+    
+    .highlight {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    
+    .subtitle {
+      font-size: 1.3rem;
+      margin: 1.5rem 0;
+      opacity: 0.9;
+      max-width: 500px;
+    }
+    
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .stat-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      min-width: 120px;
+      backdrop-filter: blur(5px);
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      display: block;
+      margin-top: 0.5rem;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .primary-btn, .secondary-btn {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .primary-btn {
+      background: white;
+      color: var(--primary);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    }
+    
+    .primary-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+    }
+    
+    .secondary-btn {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .secondary-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+    
+    /* Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    .tool-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tool-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+    
+    .tool-card h2 {
+      margin: 1rem 0;
+      font-size: 1.5rem;
+      color: var(--dark);
+    }
+    
+    .tool-card p {
+      margin-bottom: 2rem;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    
+    .tool-card a {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .tool-card a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+    }
+    
+    .tool-card a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+    
+    .tool-card a:hover::before {
+      left: 100%;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      padding: 4rem 2rem;
+      background: white;
+      text-align: center;
+    }
+    
+    .testimonials h2 {
+      font-size: 2.2rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    
+    .section-subtitle {
+      color: #666;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+    
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: left;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .testimonial-content {
+      margin-bottom: 1.5rem;
+    }
+    
+    .stars {
+      color: #ffc107;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .author-info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .author-info strong {
+      color: var(--dark);
+    }
+    
+    .author-info span {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+    
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient);
+    }
+    
+    footer p {
+      margin: 0.5rem 0;
+    }
+    
+    .made-with {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    
+    .made-with span {
+      margin-left: 0.5rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    
+    /* Monetag Section */
+    .monetag-section {
+      margin: 2rem auto;
+      text-align: center;
+      max-width: 100%;
+      padding: 0 2rem;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .hero-image {
+        display: none;
+      }
+      
+      .hero-content {
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+      }
+      
+      .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .cta-buttons {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .hero-stats {
+        gap: 1rem;
+      }
+      
+      .stat-item {
+        min-width: 100px;
+        padding: 0.8rem;
+      }
+      
+      .stat-number {
+        font-size: 1.5rem;
+      }
+      
+      .nav-container {
+        padding: 1rem;
+        flex-direction: column;
+      }
+      
+      .nav-links {
+        margin-top: 1rem;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="inde.html" class="logo">ToolVault</a>
+      <div class="nav-links">
+        <a href="inde.html">Home</a>
+        <a href="ai.html">AI Detector</a>
+        <a href="my secrets.html">Encryption</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="improved ai.html">Task Manager</a>
+         <a href="index.html">pranjal</a>
+
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero-content">
+      <h1>Powerful Online Tools <span class="highlight">Without the Hassle</span></h1>
+      <p class="subtitle">No logins. . No tracking. Just <strong>free, private tools</strong> that work instantly in your browser.</p>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">92%</span>
+          <span class="stat-label">AI Detection Accuracy</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Client-Side Processing</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Data Collected</span>
+        </div>
+      </div>
+      
+      <div class="cta-buttons">
+        <a href="#tools" class="primary-btn">Explore Tools</a>
+        <a href="ai.html" class="secondary-btn">Try AI Detector</a>
+      </div>
+    </div>
+    
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Digital tools illustration" loading="lazy">
+    </div>
+  </header>
+
+  <!-- Ezoic Boost -->
+  <div class="monetag-section">
+    <script src="https://www.ezojs.com/ezoic/sa.min.js" data-cfasync="false" async></script>
+    <script>
+      var ezoicBoostKey = 'YOUR_EZOIC_BOOST_KEY';
+      (function(e,z,o,i,c){if(!e.fbq){var n=e.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!e._fbq)e._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];var t=z.createElement(o);t.async=!0;t.src=i;var s=z.getElementsByTagName(o)[0];s.parentNode.insertBefore(t,s)}})(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', ezoicBoostKey);
+      fbq('track', 'PageView');
+    </script>
+  </div>
+
+  <main class="tools-grid" id="tools">
+    <div class="tool-card">
+      <h2>🧠 ForgetfulTasks: Offline Task Manager</h2>
+      <p>Track daily tasks without login. Data stays in your browser forever.</p>
+      <a href="improved%20ai.html">Open Tool</a>
+    </div>
+    <div class="tool-card">
+      <h2>🔍 AI Art Detector (92% Accurate)</h2>
+      <p>Instantly check if an image was AI-generated. No uploads, no data stored.</p>
+      <a href="ai.html">Open Tool</a>
+    </div>
+    <div class="tool-card">
+      <h2>🌠 My Wishlist: Save Dreams Securely</h2>
+      <p>Create & manage wishlists offline. Never forget your goals.</p>
+      <a href="wishlist.html">Open Tool</a>
+    </div>
+    <div class="tool-card">
+      <h2>🔐 Secrets Safe: Military-Grade Encryption</h2>
+      <p>Encrypt/decrypt messages in your browser. Zero server processing.</p>
+      <a href="my%20secrets.html">Open Tool</a>
+    </div>
+  </main>
+
+     
+      <!-- Ezoic Boost -->
+  <div class="monetag-section">
+    <script src="https://www.ezojs.com/ezoic/sa.min.js" data-cfasync="false" async></script>
+    <script>
+      var ezoicBoostKey = 'YOUR_EZOIC_BOOST_KEY';
+      (function(e,z,o,i,c){if(!e.fbq){var n=e.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!e._fbq)e._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];var t=z.createElement(o);t.async=!0;t.src=i;var s=z.getElementsByTagName(o)[0];s.parentNode.insertBefore(t,s)}})(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', ezoicBoostKey);
+      fbq('track', 'PageView');
+    </script>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ToolVault. All rights reserved.</p>
+    <p class="made-with">Made with <span>💡</span> to empower privacy and accessibility for all users.</p>
+  </footer>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+
+  <!-- Notification Script -->
+  <script>
+    function setupNotifications() {
+      if ('Notification' in window && Notification.permission === 'default') {
+        Notification.requestPermission().then(permission => {
+          if (permission === 'granted') {
+            new Notification("ToolVault", {
+              body: "Discover our collection of powerful free tools!",
+              icon: "https://yourdomain.com/icon.png"
+            });
+          }
+        });
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      setupNotifications();
+    });
+  </script>
+</body>
+</html>
